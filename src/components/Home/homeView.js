@@ -25,8 +25,8 @@ const HomeView = ({ launchDemo, signUpRoute, signInRoute }) => (
         <FontAwesomeIcon icon={faReceipt} size="9x"/>
       </div>
       <div>
-        <h1>WELCOME TO Shop.</h1>
-        <p>Optimized order management for the food business industry.</p>
+        <h1>WELCOME TO SHOP.</h1>
+        <p>Optimized order management for the coffee shop business industry.</p>
         <div className="btn" onClick={() => launchDemo()}>TRY IT NOW!</div>
       </div>
     </div>
