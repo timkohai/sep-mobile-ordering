@@ -1,6 +1,6 @@
 {
-  "short_name": "DashTabs",
-  "name": "DashTabs",
+  "short_name": "CoffeeOrdering",
+  "name": "CoffeeOrdering",
   "icons": [],
   "start_url": "./index.html",
   "display": "standalone",

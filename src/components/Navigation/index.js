@@ -50,7 +50,7 @@ const NavigationAuth = ({ authUser, displayingMenu, history }) => {
             onClick={() => toggleToOrders()}
             style={{ textDecoration: 'none', color: 'white' }}
           >
-              DASH-TABS
+              CoffeeShop
             </Link>
         </div>
         {(!displayingMenu && parameter === "dashboard") && (
@@ -106,7 +106,7 @@ const NavigationNonAuth = ({ displayingMenu }) => (
   <div className="navBar">
     <div id="logo">
       <FontAwesomeIcon icon={faReceipt}/>
-      <Link style={{ textDecoration: 'none', color: 'white' }} to={ROUTES.HOME}>DASH-TABS</Link>
+      <Link style={{ textDecoration: 'none', color: 'white' }} to={ROUTES.HOME}>CoffeeShop</Link>
     </div>
     <div className="navLinks bottomNav">
       {!displayingMenu && <Link style={{ textDecoration: 'none', color: 'white' }} to={ROUTES.SIGN_IN}>SIGN IN</Link>}

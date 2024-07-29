@@ -11,6 +11,7 @@ const HomePage = (props) => {
     props.firebase.doSignInAnonymously()
       .then(() => {
         let currentUid = props.firebase.getCurrentUserUid();
+        console.log('currentUid', currentUid)
         props.firebase.userOrders(currentUid).set(DEMODATA.ORDERS);
         props.firebase.userMenu(currentUid).set(DEMODATA.MENU);
         props.firebase.user(currentUid).set(DEMODATA.USER);

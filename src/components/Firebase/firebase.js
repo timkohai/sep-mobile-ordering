@@ -12,6 +12,8 @@ const config = {
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
 };
 
+console.log('config', config)
+
 class Firebase {
   constructor() {
     firebase.initializeApp(config);
