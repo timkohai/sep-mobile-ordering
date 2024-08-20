@@ -12,6 +12,7 @@ import Navigation from '../Navigation';
 import { withAuthentication } from '../Session';
 import * as ROUTES from '../../constants/routes';
 import PasswordForgetPage from '../PasswordForget';
+import StripePage from '../Stripe';
 
 const App = () => (
   <StoreProvider>
@@ -24,6 +25,7 @@ const App = () => (
         <Route exact path={ROUTES.HOME} component={HomePage} />
         <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
         <Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
+        <Route exact path={ROUTES.STRIPE} component={StripePage} />
         <Route exact path={`${ROUTES.MENU}/:uid/:table`} component={Menu} />
       </div>
     </Router>

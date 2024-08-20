@@ -12,8 +12,10 @@ const ClientMenuItemCard = ({
   isCurrentItem,
   upgradeItemQty,
   setCurrentItem,
+  updateItem,
 }) => {
   return (
+
     <> 
       {!isCurrentItem && (
         <div 
@@ -21,6 +23,7 @@ const ClientMenuItemCard = ({
           className="client_menuItemCard" 
           onClick={() => setCurrentItem(type, idx, item)}
         >
+          <div className="image"><img src={item.image}/></div>
           <h3>{item.name.toUpperCase()}</h3>
           <h3>{isInOrder ? `x${getItemQty(item.name, type)}` : `$${item.price}`}</h3>
         </div>
@@ -33,6 +36,40 @@ const ClientMenuItemCard = ({
               <h3>${item.price}</h3>
             </div>
             <p>{item.description}</p>
+
+            { type == 'drinks' &&
+              <div>
+              <div>Size:</div>
+              <select 
+                name="attribute" 
+                value="" 
+                onChange={updateItem}>
+                <option value="S">Small</option>
+                <option value="M">Medium</option>
+                <option value="L">Large</option>
+              </select>
+              <br />
+              <div>Sugar:</div>
+              <select 
+                name="attribute" 
+                value="" 
+                onChange={updateItem}>
+                <option value="Y">Yes</option>
+                <option value="N">No</option>
+              </select>
+              <br />
+              <div>Milk:</div>
+              <select 
+                name="attribute" 
+                value="" 
+                onChange={updateItem}>
+                <option value="almond">Almond Milk</option>
+                <option value="skimmed">Skimmed Milk</option>
+              </select>
+              <br />
+              <br />
+              </div>
+            }
           </div>
           <div>
             <div>

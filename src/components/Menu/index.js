@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import MenuView from './menuView';
 import { withFirebase } from '../Firebase';
 
+import { loadStripe } from '@stripe/stripe-js';
+
 class Menu extends Component {
   constructor(props) {
     super(props);
@@ -30,12 +32,13 @@ class Menu extends Component {
   };
 
   componentWillMount() {
+    
     this.fetchMenu(this.props.match.params.uid);
     if(this.props.match.params.table !== "takeout") {
       this.tableIsValid(this.props.match.params.uid);
     }
     this.orderIsValid(this.props.match.params.uid);
-    this.fetchRestaurantName(this.props.match.params.uid);
+    this.fetchRestaurantName(this.props.match.params.uid);  
   }
 
   componentWillUnmount() {
@@ -232,6 +235,10 @@ class Menu extends Component {
     this.setState({ currentItem: newCurrentItem });
   };
 
+  updateItem = () => {
+    console.log('Update Item')
+  }
+
   addItem = () => {
     let { order, currentItem } = this.state;
     let newOrder = { ...order, items: { dishes: [...order.items.dishes], drinks: [...order.items.drinks] } };
@@ -251,6 +258,44 @@ class Menu extends Component {
       newOrder.cost = newOrder.cost + currentItem.subtotal;
     }
     this.setState({ order: newOrder, currentItem: { type: null, idx: null }});
+  };
+
+  makePayment = async () => {
+    const stripe = await loadStripe('pk_test_gn5mWfqmmtCq9ck8o6XibTRv');
+
+    let drinks = this.state.order.items.drinks.map(( item, idx) => {
+      return { name: item.name, qty: item.qty, price: this.getItemCost(item.name, "drinks")}
+    })
+
+    let dishes = this.state.order.items.dishes.map(( item, idx) => {
+      return { name: item.name, qty: item.qty, price: this.getItemCost(item.name, "dishes")}
+    })
+
+  
+    const body = {
+      products: [...drinks, ...dishes]
+    }
+
+    const headers = {
+      'Content-Type': 'application/json'
+    }
+
+    const response = await fetch(`http://localhost:3002/create-checkout-session`, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(body)
+    })
+
+    const session = await response.json()
+
+    const result = stripe.redirectToCheckout({
+      sessionId: session.id
+    })
+
+    if(result.error) {
+      console.log(result.error)
+    }
+
   };
 
   render() {
@@ -300,6 +345,8 @@ class Menu extends Component {
         orderDrinksIsEmpty={orderDrinksIsEmpty}
         itemExistsInOrder={this.itemExistsInOrder}
         toggleConfirmScreen={this.toggleConfirmScreen}
+        makePayment={this.makePayment}
+        updateItem={this.updateItem}
       />
     );
   }

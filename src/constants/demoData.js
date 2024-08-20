@@ -24,18 +24,21 @@ export const MENU = {
       name: "Panini",
       available: true, 
       description: "Choose between ham, chicken or vegetarian",
+      image: "https://i.ibb.co/DKgQsbJ/straberry.pngg",
     },
     { 
       price: 33,
       available: true, 
       name: "Croissant",
       description: "Chocolate filled or plain",
+      image: "https://i.ibb.co/DKgQsbJ/straberry.png",
     },
     { 
       price: 42,
       name: "Pie",
       available: true, 
       description: "Apple, Cheese, Lemon or Plum",
+      image: "https://i.ibb.co/DKgQsbJ/straberry.png",
     },
   ],
   drinks: [
@@ -44,18 +47,21 @@ export const MENU = {
       available: true,
       name: 'Cappuccino',
       description: 'Freshly brewed every morning',
+      image: "https://i.ibb.co/c3FgMVt/espresso.png",
     },
     {
       price: 23,
       name: 'Fruit Smoothie',
       available: true,
       description: 'Banana, strawberry, mango.',
+      image: "https://i.ibb.co/c3FgMVt/espresso.png",
     },
     {
       price: 12,
       name: 'Tea',
       available: true,
       description: 'Assortment of chai, camomille, lemon, etc',
+      image: "https://i.ibb.co/c3FgMVt/espresso.png",
     },
   ],
 };

@@ -15,13 +15,21 @@ class MenuManager extends Component {
         price: '',
         available: '',
         description: '',
+        image: '',
+        size: '',
+        sugar: '',
+        milk: '',
       },
       inputItem: {
         type: '',
         name: '',
         price: '',
         description: '',
+        image: '',
         available: true,
+        size: '',
+        sugar: '',
+        milk: '',
       },
       error: null,
     };
@@ -71,6 +79,10 @@ class MenuManager extends Component {
         price: parseInt(this.state.inputItem.price, 10), 
         available: this.state.inputItem.available,
         description: this.state.inputItem.description,
+        image: this.state.inputItem.image,
+        size: this.state.inputItem.size,
+        sugar: this.state.inputItem.sugar,
+        milk: this.state.inputItem.milk,
       };
       let newMenu = {
         drinks: [...this.state.menu.drinks],
@@ -83,8 +95,12 @@ class MenuManager extends Component {
           type: '',
           name: '', 
           price: '',
-          description: '', 
+          description: '',
+          image: '', 
           available: true, 
+          size: '',
+          sugar: '',
+          milk: ''
         } 
       });
       this.props.updateMenuDb(newMenu);
@@ -107,6 +123,10 @@ class MenuManager extends Component {
         price: parseInt(this.state.itemEdit.price, 10), 
         available: this.state.itemEdit.available,
         description: this.state.itemEdit.description,
+        image: this.state.itemEdit.image,
+        size: this.state.itemEdit.size,
+        sugar: this.state.itemEdit.sugar,
+        milk: this.state.itemEdit.milk,
       };
       let newMenu = {
         drinks: [...this.state.menu.drinks],
@@ -123,6 +143,10 @@ class MenuManager extends Component {
           price: '',
           available: '',
           description: '',
+          image: '',
+          size: '',
+          sugar: '',
+          milk: '',
         }
       });
       this.props.updateMenuDb(newMenu);
@@ -139,6 +163,10 @@ class MenuManager extends Component {
         current: item.name, 
         available: item.available,
         description: item.description,
+        image: item.image,
+        size: item.size,
+        sugar: item.sugar,
+        milk: item.milk,
       } 
     });
   };
@@ -160,6 +188,10 @@ class MenuManager extends Component {
         price: '',
         available: '',
         description: '',
+        image: '',
+        size: '',
+        sugar: '',
+        milk: '',
       }
     });
     this.props.updateMenuDb(newMenu);
@@ -175,6 +207,10 @@ class MenuManager extends Component {
         price: '',
         available: '',
         description: '',
+        image: '',
+        size: '',
+        sugar: '',
+        milk: '',
       }
     })
   };

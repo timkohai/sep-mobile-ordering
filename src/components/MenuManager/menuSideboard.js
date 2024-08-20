@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+
 const MenuSideboard = ({ 
   addItem,
   itemEdit,
@@ -50,6 +52,44 @@ const MenuSideboard = ({
                   onChange={onChangeForm}
                   value={inputItem.description}
                 />
+              </div>
+              <div className="inputGroup">
+                <h4>Image Url</h4>
+                <input 
+                  name="image"
+                  type="text"
+                  value={inputItem.image}
+                  onChange={onChangeForm}
+                />
+              </div>
+              <div className="inputGroup">
+                <h4>Size</h4>
+                <select 
+                  name="size" 
+                  value={inputItem.size} 
+                  onChange={onChangeForm}>
+                  <option value="S">Small</option>
+                  <option value="M">Medium</option>
+                  <option value="L">Large</option>
+                </select>
+              </div>
+              <div className="inputGroup">
+                <h4>Sugar</h4>
+                <input 
+                  type="text"
+                  name="sugar"
+                  value={inputItem.sugar}
+                  onChange={onChangeForm}
+                  />
+              </div>
+              <div className="inputGroup">
+                <h4>Milk</h4>
+                <input 
+                  type="text"
+                  name="milk"
+                  value={inputItem.milk}
+                  onChange={onChangeForm}
+                  />
               </div>
               <div className="inputGroup">
                 <h4>Type</h4>
@@ -122,6 +162,44 @@ const MenuSideboard = ({
                   onChange={onChangeEdit}
                   value={itemEdit.description}
                 />
+              </div>
+              <div className="inputGroup">
+                <h4>Image Url</h4>
+                <input 
+                  type="text"
+                  name="image"
+                  value={itemEdit.image}
+                  onChange={onChangeEdit}
+                  />
+              </div>
+              <div className="inputGroup">
+                <h4>Size</h4>
+                <select 
+                  name="size" 
+                  value={itemEdit.size} 
+                  onChange={onChangeEdit}>
+                  <option value="S">Small</option>
+                  <option value="M">Medium</option>
+                  <option value="L">Large</option>
+                </select>
+              </div>
+              <div className="inputGroup">
+                <h4>Sugar</h4>
+                <input 
+                  type="text"
+                  name="sugar"
+                  value={itemEdit.sugar}
+                  onChange={onChangeEdit}
+                  />
+              </div>
+              <div className="inputGroup">
+                <h4>Milk</h4>
+                <input 
+                  type="text"
+                  name="milk"
+                  value={itemEdit.milk}
+                  onChange={onChangeEdit}
+                  />
               </div>
               <div className="inputGroup">
                 <h4>Available</h4>

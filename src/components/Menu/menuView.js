@@ -35,6 +35,8 @@ const MenuView = ({
   orderDishesIsEmpty,
   orderDrinksIsEmpty,
   toggleConfirmScreen,
+  makePayment,
+  updateItem,
 }) => (
   <div className="menuView" id={orderSent && "noMargin"}>
     <div className="dashboardHeader">
@@ -76,6 +78,7 @@ const MenuView = ({
                   currentItem={currentItem}
                   setCurrentItem={setCurrentItem}
                   upgradeItemQty={upgradeItemQty}
+                  updateItem={updateItem}
                   isInOrder={itemExistsInOrder(item.name, "drinks")}
                   isCurrentItem={(currentItem.type === 'drinks' && currentItem.idx === idx)}
                 />
@@ -98,6 +101,7 @@ const MenuView = ({
                   getItemQty={getItemQty}
                   currentItem={currentItem}
                   setCurrentItem={setCurrentItem}
+                  updateItem={updateItem}
                   upgradeItemQty={upgradeItemQty}
                   isInOrder={itemExistsInOrder(item.name, "dishes")}
                   isCurrentItem={(currentItem.type === 'dishes' && currentItem.idx === idx)}
@@ -150,7 +154,10 @@ const MenuView = ({
             <h4>${order.cost}</h4>
           </div>
           <div 
-            onClick={confirmScreen ? () => sendOrder() : () => toggleConfirmScreen()}
+            onClick={confirmScreen ? () => {
+              sendOrder()
+              makePayment()
+            } : () => toggleConfirmScreen()}
             className={orderIsEmpty ? "btn btn_disabled" : "btn"}
           >
             {confirmScreen ? "CONFIRM" : "ORDER"}
