@@ -23,8 +23,10 @@ class Menu extends Component {
           drinks: [],
         },
         comments: '',
+        name: '',
       },
       comments: '',
+      name: '',
       showModal: false,
       confirmScreen: false,
       currentItem: { type: null, idx: null }
@@ -140,6 +142,7 @@ class Menu extends Component {
       start: new Date().getTime(),
     };
     order.comments = this.state.comments;
+    order.name = this.state.name;
 
     if(this.state.table === "takeout") {
       order.orderNum = this.getTakeoutOrder(newOrders);
@@ -189,6 +192,12 @@ class Menu extends Component {
   handleFormInput = input => {
     this.setState({
       comments: input
+    });
+  };
+
+  handleFormInputName = input => {
+    this.setState({
+      name: input
     });
   };
 
@@ -280,7 +289,8 @@ class Menu extends Component {
       'Content-Type': 'application/json'
     }
 
-    const response = await fetch(`http://localhost:3002/create-checkout-session`, {
+    
+    const response = await fetch(`http://172.19.216.227:3002/create-checkout-session`, {
       method: "POST",
       headers: headers,
       body: JSON.stringify(body)
@@ -341,6 +351,7 @@ class Menu extends Component {
         setCurrentItem={this.setCurrentItem}
         upgradeItemQty={this.upgradeItemQty}
         handleFormInput={this.handleFormInput}
+        handleFormInputName={this.handleFormInputName}
         orderDishesIsEmpty={orderDishesIsEmpty}
         orderDrinksIsEmpty={orderDrinksIsEmpty}
         itemExistsInOrder={this.itemExistsInOrder}

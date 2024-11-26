@@ -34,6 +34,12 @@ const OrdersSideboard = ({
               </div>
             </>
           )}
+          {selectedOrder.name !== '' && (
+            <div className="order_info">
+              <h3>Name</h3>
+              <h3 id="time">{selectedOrder.name}</h3>
+            </div>
+          )}
           {selectedOrder.comments !== '' && (
             <div className="order_info">
               <h3>Comments</h3>

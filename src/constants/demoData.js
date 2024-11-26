@@ -74,5 +74,5 @@ export const USER = {
     { description: "Large table", number: 3, waitingOrder: false },
   ],
   username: 'DemoSession', 
-  businessName:'The Coffeehouse'
+  businessName:'Grab Coffee'
 };

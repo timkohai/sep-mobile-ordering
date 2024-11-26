@@ -6,6 +6,7 @@ const OrderConfirmScreen = ({
   order, 
   getItemCost,
   handleFormInput,
+  handleFormInputName,
   orderDrinksIsEmpty,
   orderDishesIsEmpty, 
   toggleConfirmScreen
@@ -39,6 +40,10 @@ const OrderConfirmScreen = ({
         )}
       </div>
     )}
+    <div>          
+      <h4>Name</h4>
+      <input name="name" type="text" onChange={(e) =>  handleFormInputName(e.target.value)} />
+    </div>
     <div>          
       <h4>Extra instructions or request</h4>
       <textarea rows="4" cols="50" form="usrform" onChange={(e) =>  handleFormInput(e.target.value)}/>

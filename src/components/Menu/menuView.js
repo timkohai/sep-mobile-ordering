@@ -31,6 +31,7 @@ const MenuView = ({
   setCurrentItem,
   upgradeItemQty,
   handleFormInput,
+  handleFormInputName,
   itemExistsInOrder,
   orderDishesIsEmpty,
   orderDrinksIsEmpty,
@@ -141,6 +142,7 @@ const MenuView = ({
           order={order}
           getItemCost={getItemCost}
           handleFormInput={handleFormInput}
+          handleFormInputName={handleFormInputName}
           toggleConfirmScreen={toggleConfirmScreen}
           orderDrinksIsEmpty={orderDrinksIsEmpty}
           orderDishesIsEmpty={orderDishesIsEmpty}
@@ -154,10 +156,7 @@ const MenuView = ({
             <h4>${order.cost}</h4>
           </div>
           <div 
-            onClick={confirmScreen ? () => {
-              sendOrder()
-              makePayment()
-            } : () => toggleConfirmScreen()}
+            onClick={confirmScreen ? () => sendOrder() : () => toggleConfirmScreen()}
             className={orderIsEmpty ? "btn btn_disabled" : "btn"}
           >
             {confirmScreen ? "CONFIRM" : "ORDER"}

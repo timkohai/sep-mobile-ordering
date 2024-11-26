@@ -9,8 +9,8 @@ export default class DashboardDemoModal extends Component {
           <div></div>
 
           <div className="demoModal_header">
-            <h3>WELCOME TO DASH TABS!</h3>
-            <h3>The dashboard is the core of dash tab's functionality and its split into three sections</h3>
+            <h3>WELCOME TO GRABCOFFEE!</h3>
+            <h3>The dashboard is the core of grabcoffee's functionality and its split into three sections</h3>
           </div>
           <div>
             <div className="demoModal_infoColumn">

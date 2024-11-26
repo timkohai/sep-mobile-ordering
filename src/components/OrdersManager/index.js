@@ -17,6 +17,7 @@ class OrdersManager extends Component {
         drinks: null,
         orderNum: null,
         comments: null,
+        name: null,
       },
     }
   }
@@ -60,6 +61,7 @@ class OrdersManager extends Component {
       table: el.table,
       orderNum: el.orderNum,
       comments: el.comments,
+      name: el.name,
       dishes: el.items.dishes,
       drinks: el.items.drinks,
       end: el.end ? el.end : null,

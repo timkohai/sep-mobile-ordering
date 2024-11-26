@@ -20,16 +20,18 @@ const HomeView = ({ launchDemo, signUpRoute, signInRoute }) => (
         <Link style={{ textDecoration: 'none', color: 'white' }} to={signInRoute}>SIGN IN</Link>
       </div>
     </div>
+    {/* 
     <div className="introRow">
       <div>
         <FontAwesomeIcon icon={faReceipt} size="9x"/>
       </div>
       <div>
-        <h1>WELCOME TO SHOP.</h1>
+        <h1>WELCOME TO GRABCOFFEE.</h1>
         <p>Optimized order management for the coffee shop business industry.</p>
         <div className="btn" onClick={() => launchDemo()}>TRY IT NOW!</div>
       </div>
     </div>
+    
     <div className="firstRow">
       <div>
         <div id="rowText">
@@ -69,6 +71,7 @@ const HomeView = ({ launchDemo, signUpRoute, signInRoute }) => (
         </div>
       </div>
     </div>
+    */}
     <div className="benefitsRow">
       <div>
         <FontAwesomeIcon icon={faUserFriends} size="5x"/>
@@ -89,6 +92,7 @@ const HomeView = ({ launchDemo, signUpRoute, signInRoute }) => (
         </p>
       </div>
     </div>
+
     <div className="lastRow">
       <div className="btn" onClick={() => launchDemo()}>TRY IT NOW!</div>
       <p>or</p>
@@ -99,23 +103,6 @@ const HomeView = ({ launchDemo, signUpRoute, signInRoute }) => (
         >
             CREATE ACCOUNT
           </Link>
-      </div>
-    </div>
-    <div className="footer">
-      <div style={{
-          opacity: 0.3,
-          fontSize: 15,
-          fontWeight: 'bold',
-          textAlign: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <a 
-          style={{ 'textDecoration': 'none', 'color': "gray" }} 
-          href="http://www.github.com/pgast" 
-        >
-          &lt;/&gt; pgast
-        </a>
       </div>
     </div>
   </div>
